@@ -14,3 +14,6 @@ for create folder, 'poetry new project1'
 'poetry remove xxxx' : delete xxxx package
 'poetry shell": activate virtual environnement
 'poetry list' : display package for this project
+
+## Docs for Taipy library
+[https://docs.taipy.io/en/release-3.0/knowledge_base/tutorials/](Taipy)

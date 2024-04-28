@@ -1,11 +1,13 @@
 from taipy.gui import Icon, navigate
 import taipy.gui.builder as tgb
-from pages.Presentation_projet.Presentation_projet_md import *
-from pages.Visualisation.Visualisation_md import *
-from pages.Model.Model_md import *
+from pages.Presentation_projet.Presentation_projet import *
+from pages.Visualisation.Visualisation import *
+from pages.Model.Model import *
 
 # dialog
 show_roc = False
+
+#https://github.com/google/material-design-icons/upload/master/png
 
 # Common variables to several pages
 algorithm_selector = ['Baseline', 'ML']
@@ -17,9 +19,9 @@ select_y = []
 y_selected = None
 
 menu_lov = [
-    ("Presentation projet", Icon('images/histogram_menu.svg', 'Presentation projet')),
-    ("Visualisation", Icon('images/model.svg', 'Visualisation')),
-    ("Model", Icon('images/compare.svg', 'Model'))
+    ("Presentation projet", Icon('images/description.png', 'Presentation projet')),
+    ("Visualisation", Icon('images/line-graph.png', 'Visualisation')),
+    ("Model", Icon('images/deep-learning.png', 'Model'))
 ]
 
 

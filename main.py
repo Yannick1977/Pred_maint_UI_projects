@@ -16,13 +16,13 @@ def on_init(state):
 # Define pages
 pages = {
     "/": root,
-    "Presentation projet": Presentation_projet,
-    "Visualisation": visualisation, 
+    "Presentation_projet": Presentation_projet,
+    "Visualisation": Visualisation, 
     "Model": Model,
 }
 
 if __name__ == '__main__':
     tp.Core().run()
 
-    gui = Gui(pages=pages)
-    gui.run(title="Churn classification", dark_mode=False, port=8494)
+    gui = Gui(pages=pages, css_file=["./main.css"])
+    gui.run(title="Maintenance projects", dark_mode=True, port=8494)
