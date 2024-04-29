@@ -1142,6 +1142,21 @@ build-docs = ["cloud-sptheme (>=1.10.1)", "sphinx (>=1.6)", "sphinxcontrib-fullt
 totp = ["cryptography"]
 
 [[package]]
+name = "plotly"
+version = "5.21.0"
+description = "An open-source, interactive data visualization library for Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "plotly-5.21.0-py3-none-any.whl", hash = "sha256:a33f41fd5922e45b2b253f795b200d14452eb625790bb72d0a72cf1328a6abbf"},
+    {file = "plotly-5.21.0.tar.gz", hash = "sha256:69243f8c165d4be26c0df1c6f0b7b258e2dfeefe032763404ad7e7fb7d7c2073"},
+]
+
+[package.dependencies]
+packaging = "*"
+tenacity = ">=6.2.0"
+
+[[package]]
 name = "pyarrow"
 version = "15.0.0"
 description = "Python library for Apache Arrow"
@@ -1787,6 +1802,20 @@ files = [
 ]
 
 [[package]]
+name = "tenacity"
+version = "8.2.3"
+description = "Retry code until it succeeds"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tenacity-8.2.3-py3-none-any.whl", hash = "sha256:ce510e327a630c9e1beaf17d42e6ffacc88185044ad85cf74c0a8887c6a0f88c"},
+    {file = "tenacity-8.2.3.tar.gz", hash = "sha256:5398ef0d78e63f40007c1fb4c0bff96e1911394d2fa8d194f77619c05ff6cc8a"},
+]
+
+[package.extras]
+doc = ["reno", "sphinx", "tornado (>=4.5)"]
+
+[[package]]
 name = "text-unidecode"
 version = "1.3"
 description = "The most basic Text::Unidecode port"
@@ -2044,4 +2073,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "1a0d43a0af8bbd365cf9dc11fd48def7717ee3981fae2e8f325a4b8ae86c3c78"
+content-hash = "79e3f2af5cfc786cdf37b59e1f732afa1749c57b8100fff43e168af2716c6136"

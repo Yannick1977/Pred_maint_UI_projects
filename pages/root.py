@@ -10,13 +10,14 @@ show_roc = False
 #https://github.com/google/material-design-icons/upload/master/png
 
 # Common variables to several pages
-algorithm_selector = ['Baseline', 'ML']
-algorithm_selected = 'ML'
 
-select_x = []
+x_to_select = []
 x_selected = None
-select_y = []
+y_to_select = []
 y_selected = None
+
+status_connexion = "unknown"
+connexion_asked = False
 
 menu_lov = [
     ("Presentation projet", Icon('images/description.png', 'Presentation projet')),
@@ -27,7 +28,7 @@ menu_lov = [
 
 def menu_fct(state, var_name, var_value):
     """Function that is called when there is a change in the menu control."""
-    page = var_value['args'][0].replace(" ", "-")
+    page = var_value['args'][0].replace(" ", "_")
     navigate(state, page)   
 
 def close_dialog(state):

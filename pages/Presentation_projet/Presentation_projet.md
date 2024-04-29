@@ -13,12 +13,18 @@ Vous trouverez une description du dataset à [cette adresse](https://www.kaggle.
 Le site distant étant un site serverless, celui peut mettre quelques minutes à demarrer
 
 <|APIs is alive ?|button|on_action=is_alive|>
-**Status:** <|{status_connexion}|>
+  **Status:** <|{status_connexion}|>
 |>
+
+----
+## Dataset **Visualisation**{: .color-primary} : 
+<Training|part|render={connexion_asked}|
+<|{dataset}|table|>
+|Training>
+----
+## Affichage des **Entrypoints**{: .color-primary} :
+<|part|page=https://test-pred-maint-projects.onrender.com/docs|height=500px|render={connexion_asked}|>
 ----
 <|request|button|on_action=req|>
 <|{resp}|input|multiline|label=Resulting response|class_name=fullwidth|>
-
-<br/>
-**My text:** <|{text}|>
 
