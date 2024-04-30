@@ -2,7 +2,7 @@
 name = "pred-maint-ui-projects"
 version = "0.1.0"
 description = ""
-authors = ["yannick77 <yannick.bodin@outlook.com>"]
+authors = ["Yannick Bodin"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
