@@ -25,6 +25,4 @@ Le site distant étant un site serverless, celui peut mettre quelques minutes à
 ## Affichage des **Entrypoints**{: .color-primary} :
 <|part|page=https://test-pred-maint-projects.onrender.com/docs|height=500px|render={connexion_asked}|>
 ----
-<|request|button|on_action=req|>
-<|{resp}|input|multiline|label=Resulting response|class_name=fullwidth|>
 

@@ -3,6 +3,8 @@ from taipy.gui import Gui
 from taipy.config import Config 
 from pages.root import *
 
+from pages.root import feature_numeric, feature_list
+
 
 def on_change(state, var_name, var_value):
     """Handle variable changes in the GUI."""

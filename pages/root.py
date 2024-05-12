@@ -10,14 +10,46 @@ show_roc = False
 #https://github.com/google/material-design-icons/upload/master/png
 
 # Common variables to several pages
+BASE_URL = 'https://test-pred-maint-projects.onrender.com/'
+dict_numeric = {}
+dict_list = {}
 
 x_to_select = []
 x_selected = None
 y_to_select = []
 y_selected = None
 
+min_val_air_temp = 0.0
+max_val_air_temp = 99.0
+min_val_process_temp = 0
+max_val_process_temp = 99
+min_val_rotational_speed = 0
+max_val_rotational_speed = 99
+min_val_torque = 0
+max_val_torque = 99
+min_val_tool_wear = 0
+max_val_tool_wear = 99
+
+lst_val_type = []
+
 status_connexion = "unknown"
 connexion_asked = False
+predict_done = False
+name_failure = ["", "", "", "", ""]
+proba_failure = [0.0, 0.0, 0.0, 0.0, 0.0]
+df= pd.DataFrame(columns=["Label", "Prob"])
+
+
+class feature_numeric:
+    def __init__(self, name:str, min, max):
+        self.name = name
+        self.min = min
+        self.max = max
+
+class feature_list:
+    def __init__(self, name:str, values:list):
+        self.name = name
+        self.values = values
 
 menu_lov = [
     ("Presentation projet", Icon('images/description.png', 'Presentation projet')),
