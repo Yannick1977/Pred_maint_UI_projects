@@ -33,10 +33,23 @@
 
 |>
 ---
-<|{predict_done}|>
+<|{output_selected}|toggle|lov={output_selector}|>
 
 ---
-<|part|render={predict_done}|
+<|part|render={output_selected == 'Prediction'}|
+## **Prediction**{: .color-primary}
+<|chart|figure={prediction_graphique}|height=700px|>
+
+|>
+---
+<|part|render={output_selected == 'Explain'}|
+## **Explanation**{: .color-primary}
+<|chart|figure={explain_graphique}|height=700px|>
+
+|>
+---
+---
+<|part|render={False}|
 ## **Prediction**{: .color-primary}
 
 <|{df}|chart|type=bar|properties=properties|>

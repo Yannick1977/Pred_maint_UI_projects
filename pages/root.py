@@ -11,6 +11,7 @@ show_roc = False
 
 # Common variables to several pages
 BASE_URL = 'https://test-pred-maint-projects.onrender.com/'
+ID_request = 0
 dict_numeric = {}
 dict_list = {}
 

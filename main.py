@@ -10,13 +10,13 @@ def on_change(state, var_name, var_value):
     """Handle variable changes in the GUI."""
     if var_name in ['x_selected', 'y_selected']:
         on_change_Visualization(state)
-
+    elif var_name == 'ID_request':
+        on_change_Model(state)
 
 
 def on_init(state):
     """Handle initialization of the GUI."""
     on_init_Presentation_projet(state)
-
 
 # Define pages
 pages = {

@@ -3,6 +3,7 @@ import requests
 import json
 from urllib.parse import quote
 from datetime import datetime
+import plotly.express as px
 
 from taipy.gui import Markdown
 
@@ -45,6 +46,7 @@ def build_request(state)->bool:
         #print(state.name_failure)
 
         #print(state.proba_failure)
+        state.ID_request += 1
         return True
     else:
         print('Requête 1 échouée.')
@@ -98,5 +100,21 @@ properties = {
         "margin": {"l": 200},
     },
 }
+
+prediction_graphique = None
+explain_graphique = None
+output_selector = ['Prediction', 'Explain']
+output_selected = output_selector[0]
+
+def create_prediction_graphique(state):
+    return px.bar(state.df, x="Prob", y="Label")
+
+def create_explain_graphique(state):
+    return px.bar(state.df, x="Label", y="Prob")
+
+def on_change_Model(state):
+    state.prediction_graphique = create_prediction_graphique(state)
+    state.explain_graphique = create_explain_graphique(state)
+    print("coucou")
 
 Model = Markdown("pages/Model/Model.md")
