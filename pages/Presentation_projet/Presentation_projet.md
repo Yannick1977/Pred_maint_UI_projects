@@ -17,7 +17,6 @@ L'interface graphique est composé de la mniere suivante:
 &nbsp;&nbsp;&nbsp;&nbsp;- Description du projet ainsi que visualisation des API  
 &nbsp;&nbsp;&nbsp;&nbsp;- Visualisation des données  
 &nbsp;&nbsp;&nbsp;&nbsp;- Inference avec le modele   
-
 |>
 ----
 <|container card|

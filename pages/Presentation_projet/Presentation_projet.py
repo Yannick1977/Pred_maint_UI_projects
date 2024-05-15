@@ -9,20 +9,22 @@ resp=""
 dataset = pd.read_csv("./data/predictive_maintenance.csv")
 
 def is_alive(state):
-    if not state.connexion_asked:
-        url = 'https://test-pred-maint-projects.onrender.com/list_features'
-        state.status_connexion = "Starting in progress..."
-        response = requests.get(url)
-        if response.status_code == 200:
-            state.status_connexion = "Connected, Reading features details..."
-        else:
-            state.status_connexion = f"Not connected. code error: {response.status_code}"
+    try:
+        if not state.connexion_asked:
+            url = 'https://test-pred-maint-projects.onrender.com/list_features'
+            state.status_connexion = "Starting in progress..."
+            response = requests.get(url)
+            if response.status_code == 200:
+                state.status_connexion = "Connected, Reading features details..."
+            else:
+                state.status_connexion = f"Not connected. code error: {response.status_code}"
 
-        req_features_list(state)  
-        req_features_details(state, state.resp)
-        state.status_connexion = "Connected"
-        state.connexion_asked = True
-
+            req_features_list(state)  
+            req_features_details(state, state.resp)
+            state.status_connexion = "Connected"
+            state.connexion_asked = True
+    except Exception as e:
+        print("Une erreur s'est produite: ", e)
     
 
 def req_features_list(state):
