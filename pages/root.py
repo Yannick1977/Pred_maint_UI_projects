@@ -31,6 +31,7 @@ max_val_torque = 99
 min_val_tool_wear = 0
 max_val_tool_wear = 99
 
+
 lst_val_type = []
 
 status_connexion = "unknown"

@@ -61,7 +61,7 @@ def req_features_details(state, response_json):
     
     #print(f'test : {state.dict_list[state.list_features[0]].values}')
     state.lst_val_type = eval(state.dict_list[state.list_features[0]].values.replace(" ", ","))
-
+    state.type_selected = state.lst_val_type[0]
     state.min_val_air_temp = state.dict_numeric[state.list_features[1]].min
     state.max_val_air_temp = state.dict_numeric[state.list_features[1]].max
     state.min_val_process_temp = state.dict_numeric[state.list_features[2]].min

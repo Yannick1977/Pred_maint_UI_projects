@@ -4,6 +4,7 @@ import json
 from urllib.parse import quote
 from datetime import datetime
 import plotly.express as px
+from taipy.gui import notify
 
 from taipy.gui import Markdown
 
@@ -124,17 +125,21 @@ output_selected = output_selector[0]
 
 def create_prediction_graphique(state):
     graph = px.bar(state.df, x="Prob", y="Label", text_auto=True)
-    graph.update_layout(autosize=False, margin=dict(l=250, r=50, b=100, t=100, pad=10))
+    #graph.update_layout(autosize=False, margin=dict(l=250, r=50, b=100, t=100, pad=10))
+    graph.update_layout(autosize=True, margin=dict(l=250))
     return graph
 
 def create_explain_graphique(state):
     graph = px.bar(state.df_explain, x="weight", y="item", text_auto=True)
-    graph.update_layout(autosize=False, margin=dict(l=250, r=50, b=100, t=100, pad=10))
+    #graph.update_layout(autosize=False, margin=dict(l=250, r=50, b=100, t=100, pad=10))
+    graph.update_layout(autosize=True, margin=dict(l=250))
     return graph
 
 def on_change_Model(state):
     state.prediction_graphique = create_prediction_graphique(state)
     state.explain_graphique = create_explain_graphique(state)
+    notify("Prediction effectuée", "Les prédictions et explications ont été calculées avec succès")
+    output_selected = None
 
 
 Model = Markdown("pages/Model/Model.md")
