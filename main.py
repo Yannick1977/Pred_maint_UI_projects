@@ -17,6 +17,7 @@ def on_change(state, var_name, var_value):
 def on_init(state):
     """Handle initialization of the GUI."""
     on_init_Presentation_projet(state)
+    on_init_Model(state)
 
 # Define pages
 pages = {

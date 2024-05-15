@@ -8,10 +8,22 @@ from taipy.gui import notify
 
 from taipy.gui import Markdown
 
+b_submit = 1
+str_submit = "Submit"
 
 def submit_val(state):
+    state.b_submit = 2
+    state.str_submit = "Traitement en cours..."
+    
     if build_request_predict(state) & build_request_explain(state):
         state.ID_request += 1
+    
+    state.str_submit = "Submit"
+    state.b_submit = 1
+
+def on_init_Model(state):
+    state.str_submit = "Soumettre"
+    state.b_submit = 1
 
 def on_change_val(state):
     pass

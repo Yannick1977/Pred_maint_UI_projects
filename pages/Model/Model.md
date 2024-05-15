@@ -70,7 +70,13 @@
 |var_typ2>
 
 |>
-<|Submit|button|on_action=submit_val|>
+<b1|part|render={b_submit==1}|
+<|{str_submit}|button|on_action=submit_val|>
+|b1>
+<b2|part|render={b_submit==2}|
+**Traitement en cours ...**{: .color-primary}
+|b2>
+
 ---
 <|{output_selected}|toggle|lov={output_selector}|>
 
