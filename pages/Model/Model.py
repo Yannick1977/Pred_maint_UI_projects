@@ -9,10 +9,13 @@ from taipy.gui import notify
 from taipy.gui import Markdown
 
 
-def on_change_val(state):
-    
+def submit_val(state):
     if build_request_predict(state) & build_request_explain(state):
         state.ID_request += 1
+
+def on_change_val(state):
+    pass
+    
 
 def build_request_predict(state)->bool:
     data = {}

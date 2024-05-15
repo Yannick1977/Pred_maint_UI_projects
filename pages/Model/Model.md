@@ -70,6 +70,7 @@
 |var_typ2>
 
 |>
+<|Submit|button|on_action=submit_val|>
 ---
 <|{output_selected}|toggle|lov={output_selector}|>
 

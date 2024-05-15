@@ -12,6 +12,7 @@ def is_alive(state):
     try:
         if not state.connexion_asked:
             url = 'https://test-pred-maint-projects.onrender.com/list_features'
+            print('url : ', url)
             state.status_connexion = "Starting in progress..."
             response = requests.get(url)
             if response.status_code == 200:
