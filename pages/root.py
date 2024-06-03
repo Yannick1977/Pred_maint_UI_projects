@@ -43,12 +43,14 @@ df= pd.DataFrame(columns=["Label", "Prob"])
 
 
 class feature_numeric:
+    """Class to store the details of a numeric feature."""
     def __init__(self, name:str, min, max):
         self.name = name
         self.min = min
         self.max = max
 
 class feature_list:
+    """Class to store the details of a list feature."""
     def __init__(self, name:str, values:list):
         self.name = name
         self.values = values

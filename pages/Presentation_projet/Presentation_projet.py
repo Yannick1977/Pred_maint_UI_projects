@@ -4,43 +4,13 @@ import requests
 from urllib.parse import quote
 import requests
 from time import sleep
+from pages.Presentation_projet.ApiRequester import apiRequester
 
 from taipy.gui import Markdown
 
 resp=""
 dataset = pd.read_csv("./data/predictive_maintenance.csv")
 BASE_URL = 'https://test-pred-maint-projects.onrender.com/'
-
-class apiRequester:
-    def __init__(self, url, state):
-        self.url = url
-        self.num_requests_attempts = 0
-        self.timeout = 20
-        self.state = state
-
-    def get_request(self, num_max_requests):
-        self.state.status_connexion = "Starting in progress...!"
-        print(self.state.status_connexion+"!")
-        for _ in range(num_max_requests):
-            try:
-                response = requests.get(self.url, timeout=self.timeout)
-                print(response.status_code)
-                if response.status_code == 200:
-                    self.state.status_connexion = "Connected, Reading response..."
-                    print(self.state.status_connexion+"!")
-                    print(response.json())
-                    return True, response
-                else:
-                    self.state.status_connexion = f"Not connected. code error: {response.status_code}  Attempt: {self.num_requests_attempts}"
-                    print(self.state.status_connexion+"!")
-                    self.num_requests_attempts += 1
-                    sleep(10)  # Attendre 10 secondes
-            except requests.exceptions.Timeout:
-                self.state.status_connexion =f"Attempt: {self.num_requests_attempts}/{num_max_requests}"
-                print(self.state.status_connexion+"!")
-                self.num_requests_attempts += 1
-                #print("La requête a dépassé le délai d'attente.")
-        return False, None
 
 def is_alive(state):
     api_requester = apiRequester(BASE_URL, state)
