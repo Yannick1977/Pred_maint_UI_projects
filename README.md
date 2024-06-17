@@ -1,5 +1,15 @@
 # Pred_maint_UI_projects
 
+This project consists of the front end of a machine learning project. The technologies implemented are:
+- Poetry
+- Taipy
+- Render.com for platforming
+- github acions
+
+You will find testing on the following link: 
+https://pred-maint-ui-projects.onrender.com
+
+
 ## Poetry installation
 Under WSL, type :'curl -sSL https://install.python-poetry.org | python3 -'
 
